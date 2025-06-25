@@ -1,240 +1,491 @@
-
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Share Boost</title>
-   </head>
-   <body>
-       <br>
-       <br>
-       <br>
-       <br>
-       <b>
-<div style="font-size: 25px">
-	<script type="text/javascript">
-	farbbibliothek = new Array();
-	farbbibliothek[0] = new Array("#FF0000","#FF1100","#FF2200","#FF3300","#FF4400","#FF5500","#FF6600","#FF7700","#FF8800","#FF9900","#FFaa00","#FFbb00","#FFcc00","#FFdd00","#FFee00","#FFff00","#FFee00","#FFdd00","#FFcc00","#FFbb00","#FFaa00","#FF9900","#FF8800","#FF7700","#FF6600","#FF5500","#FF4400","#FF3300","#FF2200","#FF1100");
-	farbbibliothek[1] = new Array("#00FF00","#000000","#00FF00","#00FF00");
-	farbbibliothek[2] = new Array("#00FF00","#FF0000","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00");
-	farbbibliothek[3] = new Array("#FF0000","#FF4000","#FF8000","#FFC000","#FFFF00","#C0FF00","#80FF00","#40FF00","#00FF00","#00FF40","#00FF80","#00FFC0","#00FFFF","#00C0FF","#0080FF","#0040FF","#0000FF","#4000FF","#8000FF","#C000FF","#FF00FF","#FF00C0","#FF0080","#FF0040");
-	farbbibliothek[4] = new Array("#FF0000","#EE0000","#DD0000","#CC0000","#BB0000","#AA0000","#990000","#880000","#770000","#660000","#550000","#440000","#330000","#220000","#110000","#000000","#110000","#220000","#330000","#440000","#550000","#660000","#770000","#880000","#990000","#AA0000","#BB0000","#CC0000","#DD0000","#EE0000");
-	farbbibliothek[5] = new Array("#000000","#000000","#000000","#FFFFFF","#FFFFFF","#FFFFFF");
-	farbbibliothek[6] = new Array("#0000FF","#FFFF00");
-	farben = farbbibliothek[4];
-	function farbschrift(){for(var b=0;b<Buchstabe.length;b++){document.all["a"+b].style.color=farben[b]}farbverlauf()}function string2array(b){Buchstabe=new Array();while(farben.length<b.length){farben=farben.concat(farben)}k=0;while(k<=b.length){Buchstabe[k]=b.charAt(k);k++}}function divserzeugen(){for(var b=0;b<Buchstabe.length;b++){document.write("<span id='a"+b+"' class='a"+b+"'>"+Buchstabe[b]+"</span>")}farbschrift()}var a=1;function farbverlauf(){for(var b=0;b<farben.length;b++){farben[b-1]=farben[b]}farben[farben.length-1]=farben[-1];setTimeout("farbschrift()",30)}var farbsatz=1;function farbtauscher(){farben=farbbibliothek[farbsatz];while(farben.length<text.length){farben=farben.concat(farben)}farbsatz=Math.floor(Math.random()*(farbbibliothek.length-0.0001))}setInterval("farbtauscher()",5000);
-
-	text=
-	"𝙵𝙰𝙲𝙴𝙱𝙾𝙾𝙺 𝚂𝙷𝙰𝚁𝙴"
-	string2array(text);
-	divserzeugen();
-	//document.write(text);
-	</script></div>
-            <p>A simple share boost using Appstate by Kenneth Perez.</p>
-            <strong>NOTE:</strong> If sharing stopped try to click submit again or re-provide the following items and sumbit.
-            <br>
-            <br>
-         </div>
-         <div class="form-wrapper">
-            <form onsubmit="submitForm(event)" class="form-container">
-               <div class="form-item">
-                  <label for="cookies">APPSTATE:</label>
-                  <input type="text" id="cookies" name="cookie" placeholder="Facebook Appstate">
-               </div>
-               <div class="form-item">
-                  <label for="urls">LINK POST:</label>
-                  <input type="text" id="urls" name="url" placeholder="Link of your post">
-               </div>
-               <div class="form-item">
-                  <label for="amounts">LIMIT:</label>
-                  <input type="text" id="amounts" name="amount" placeholder="Limit share">
-               </div>
-               <div class="form-item">
-                  <label for="intervals">SHARE DELAY: (0-9)</label>
-                  <input type="text" id="intervals" name="interval" placeholder="Share delay [recommend type 1]" pattern="[0-9]*">
-               </div>
-               <div class="form-item">
-                  <button type="submit" onclick="submitForm()" id="submit-button">Submit</button>
-               </div>
-               <div class="form-item">
-                  <div id="result"></div>
-               </div>
-            </form>
-         </div>
-        <br>
-        <br>
-        <div id="ping"></div>
-        <br>
-        <div class="footer">
-      <p>All reserved 2024 @polongdev Facebok-Share</p>
-    </div>
-         <div class="container" id="process-container">
-            <h1>SHARE BOOST</h1>
-            <h4>PROCESSING:</h4>
-            <div id="processing">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHILIPINES SHARE BOOST V3 // CyberShare v1.9</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00ff9d;
+            --secondary: #00b8ff;
+            --dark: #0a0a12;
+            --darker: #050508;
+            --danger: #ff2a6d;
+            --text: #d1f7ff;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(0, 255, 157, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(0, 184, 255, 0.05) 0%, transparent 50%);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .cyber-border {
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 15px var(--primary),
+                        inset 0 0 15px var(--primary);
+            position: relative;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cyber-border::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 1px solid var(--secondary);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        h1 {
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: var(--secondary);
+            margin-top: 0;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+        }
+        
+        .glowing-text {
+            text-shadow: 0 0 8px currentColor;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--secondary);
+            color: var(--text);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            color: var(--darker);
+            padding: 0.8rem 2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            box-shadow: 0 0 15px var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, var(--danger), #ff7b9c);
+        }
+        
+        .status {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-left: 3px solid var(--primary);
+            background-color: rgba(0, 255, 157, 0.05);
+        }
+        
+        .terminal {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--secondary);
+            padding: 1rem;
+            font-family: monospace;
+            height: 200px;
+            overflow-y: auto;
+            margin-top: 1rem;
+        }
+        
+        .terminal-line {
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .success {
+            color: var(--primary);
+        }
+        
+        .error {
+            color: var(--danger);
+        }
+        
+        .warning {
+            color: #ffcc00;
+        }
+        
+        .info {
+            color: var(--secondary);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Cyberpunk animations */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 22%, 24%, 55% {
+                opacity: 0.5;
+            }
+        }
+        
+        .flicker {
+            animation: flicker 3s infinite;
+        }
+        
+        @keyframes scanline {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+        
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(0, 255, 157, 0.05) 50%,
+                transparent 100%
+            );
+            background-size: 100% 8px;
+            pointer-events: none;
+            z-index: 1000;
+            animation: scanline 4s linear infinite;
+        }
+        
+        .corner-decoration {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-style: solid;
+            border-color: var(--primary);
+            pointer-events: none;
+        }
+        
+        .top-left {
+            top: 0;
+            left: 0;
+            border-width: 3px 0 0 3px;
+        }
+        
+        .top-right {
+            top: 0;
+            right: 0;
+            border-width: 3px 3px 0 0;
+        }
+        
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            border-width: 0 0 3px 3px;
+        }
+        
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            border-width: 0 3px 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="scanlines"></div>
+    
+    <div class="container">
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+        
+        <header>
+            <h1 class="glowing-text flicker">PHILIPINES SHARE BOOST V3</h1>
+            <p class="subtitle">PH. v1.9 // facebook booster Share</p>
+        </header>
+        
+        <div class="cyber-border">
+            <h2>Authentication</h2>
+            <div class="form-group">
+                <label for="fbstate">C3C FBSTATE</label>
+                <textarea id="fbstate" rows="5" placeholder="Paste your c3c fbstate here..."></textarea>
             </div>
-            <br>
-            <br>
-            <br>
-    <!--     </div><div class="container">
-    <h1 class="col text-center" style="font-size: 20px; padding: 10px; color: #000000;">APPSTATE GETTER</h1>
-            <p>Highly recommend use your dummy account to log in here for appstate getter.</p>
-    <form id="cookie-form">
-        <div class="form-item">
-            <label for="username">Email/UID:</label>
-            <input type="text" id="username" name="username" placeholder="Enter your email" required>
+            
+            <button id="verifyBtn" class="btn">Verify</button>
+            <div id="authStatus" class="status" style="display: none;">
+                <p id="authStatusText"></p>
+            </div>
         </div>
-        <div class="form-item">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        
+        <div class="cyber-border">
+            <h2>INFORMATION UP</h2>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="postUrl">Target Post URL</label>
+                    <input type="text" id="postUrl" placeholder="https://facebook.com/...">
+                </div>
+                <div class="form-group">
+                    <label for="shareCount">Deployment Count</label>
+                    <input type="number" id="shareCount" value="10" min="1" max="100">
+                </div>
+            </div>
+            
+            <div class="grid">
+                <div class="form-group">
+                    <label for="delayMin">Minimum Delay (seconds)</label>
+                    <input type="number" id="delayMin" value="5" min="1" max="99">
+                </div>
+                <div class="form-group">
+                    <label for="delayMax">Maximum Delay (seconds)</label>
+                    <input type="number" id="delayMax" value="15" min="1" max="99">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="shareType">Deployment Method</label>
+                <select id="shareType">
+                    <option value="newsfeed">News Feed</option>
+                    <option value="story">Story</option>
+                    <option value="group">Group</option>
+                    <option value="friend">Friend's Timeline</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="customMessage">Custom Message (optional)</label>
+                <textarea id="customMessage" rows="3" placeholder="Enter your message..."></textarea>
+            </div>
         </div>
-        <div class="form-item">
-            <button type="submit" id="login-button">Login</button>
+        
+        <div class="cyber-border">
+            <h2>BOSSTER PANEL</h2>
+            <button id="startBtn" class="btn" disabled>Initiate Deployment</button>
+            <button id="stopBtn" class="btn btn-danger" disabled>Abort Mission</button>
+            
+            <div class="terminal" id="terminal">
+                <p class="terminal-line info">System initialized...</p>
+                <p class="terminal-line info">Awaiting authentication...</p>
+            </div>
         </div>
-    </form>
-
-    <!-- Container to display appstate --
-    <div id="result-container">
-        <h2></h2>
-        <div id="appstate"></div>
     </div>
-    <button id="copy-button">Copy</button>
-</div>
-<br>
-<br>
-        <!-- <div class="container">
-            <h1></h1>
-            <h4></h4>
-            <p>If you have some questions or problem just message me on <a href="https://www.facebook.com/100090346516171" style="text-decoration: none; color: blue;">FACEBOOK</a>.</p>
-         </div>
-      </div>-->
-      <style>
-         body, html {
-         margin: 0;
-         }
-         body {
-  background-color: #757575;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
- /* background-image: url('https://i.imgur.com/akTQGHe.jpeg');*/
-  color: #000000;
-  font-family: Courier;
-  margin: 0;
-  padding: 0;
-  background-attachment: fixed;
-  text-align: center;
-  font-size: 14px;
-         }
-         .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 10px;
-  text-align: center;
-         }
-         .form-item {
-         padding: 8px;
-         }
-         h1 {
-         color: #000000;
-         }
-         .form-item label {
-         font-size: 13px;
-         color: #000000;
-         margin-bottom: 5px; 
-         display: block; 
-         }
-         input, button {
-         background: #FFFFFFFF;
-         color: #000000FF; 
-         border: solid 1px #222;
-         box-sizing: border-box;
-         width: 100%;
-         margin-bottom: 10px;
-         padding: 10px;
-         border-radius: 4px;
-         font-size: 16px;
-         }
-         button {
-         cursor: none;
-         color: #0a0a0a;
-         background-color: #ededed;
-         }
-         button:hover {
-         background: #CCC;
-         }
-         #result {
-         display: none;
-         text-align: center;
-         background-color: #ededed;
-         border: solid 1px #222;
-         padding: 10px;
-         border-radius: 4px;
-         color: #0a0a0a;
-         }
-         #process {
-         }
-         .current-online {
-         font-size: 13px;
-         background: #0a0a0a;
-         padding: 10px;
-         color: #898989;
-         border: solid 1px #898989;
-         border-radius: 4px;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-         margin-bottom: 10px;
-         overflow: auto;
-         white-space: nowrap; 
-         }
-         #result {
-         padding: 10px;
-         margin-top: 20px;
-         border-radius: 5px;
-         }
 
-         #result-container {
-         display: none;
-         margin-top: 20px;
-         padding: 20px;
-         background-color: #f5f7f7;
-         border-radius: 8px;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-         max-height: 300px; 
-         overflow-y: auto; 
-         }
-
-         #result-container h2 {
-         color: #343a40;
-         }
-
-         #appstate {
-         white-space: 20pre-line;
-         width: 200px;
-         }
-    .footer {
-    text-align: center;
-    background-color: black;
-    color: white;
-    padding: 1px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    font-size: 12px;
-  }
-  #cookie-form {
-  height: 100px; 
-  overflow-y: scroll; 
-  scrollbar-width: thin; 
-  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0);
-  border-radius: 10px; 
-  margin: 10px; 
-  border: 2px solid black; 
-  background-color: 757575; 
-}
-      </style>
-		 <script src="index.js"></script>
-   </body>
-</html> 
+    <script>
+        // DOM Elements
+        const fbstateInput = document.getElementById('fbstate');
+        const verifyBtn = document.getElementById('verifyBtn');
+        const authStatus = document.getElementById('authStatus');
+        const authStatusText = document.getElementById('authStatusText');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const terminal = document.getElementById('terminal');
+        
+        // State variables
+        let isAuthenticated = false;
+        let isRunning = false;
+        let abortController = null;
+        
+        // Add a line to the terminal
+        function addTerminalLine(text, className = '') {
+            const line = document.createElement('p');
+            line.className = `terminal-line ${className}`;
+            line.textContent = `> ${text}`;
+            terminal.appendChild(line);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+        
+        // Verify FBState
+        verifyBtn.addEventListener('click', async () => {
+            const fbstate = fbstateInput.value.trim();
+            
+            if (!fbstate) {
+                addTerminalLine('Error: FBState token required', 'error');
+                return;
+            }
+            
+            addTerminalLine('Verifying FBState token...', 'warning');
+            
+            // Simulate verification (in a real app, you'd call your API)
+            try {
+                // This is where you would normally verify the fbstate
+                // For demo purposes, we'll just simulate it
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Randomly succeed or fail for demo
+                const success = Math.random() > 0.2;
+                
+                if (success) {
+                    isAuthenticated = true;
+                    startBtn.disabled = false;
+                    authStatus.style.display = 'block';
+                    authStatusText.textContent = 'Authentication successful. Systems online.';
+                    authStatusText.className = 'success';
+                    addTerminalLine('Authentication successful. Systems online.', 'success');
+                } else {
+                    throw new Error('Invalid FBState token');
+                }
+            } catch (error) {
+                isAuthenticated = false;
+                startBtn.disabled = true;
+                authStatus.style.display = 'block';
+                authStatusText.textContent = `Error: ${error.message}`;
+                authStatusText.className = 'error';
+                addTerminalLine(`Error: ${error.message}`, 'error');
+            }
+        });
+        
+        // Start sharing
+        startBtn.addEventListener('click', async () => {
+            if (!isAuthenticated) {
+                addTerminalLine('Error: Not authenticated', 'error');
+                return;
+            }
+            
+            const postUrl = document.getElementById('postUrl').value.trim();
+            const shareCount = parseInt(document.getElementById('shareCount').value);
+            const delayMin = parseInt(document.getElementById('delayMin').value);
+            const delayMax = parseInt(document.getElementById('delayMax').value);
+            const shareType = document.getElementById('shareType').value;
+            const customMessage = document.getElementById('customMessage').value.trim();
+            
+            if (!postUrl) {
+                addTerminalLine('Error: Post URL required', 'error');
+                return;
+            }
+            
+            if (isRunning) {
+                addTerminalLine('Mission already in progress', 'warning');
+                return;
+            }
+            
+            isRunning = true;
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+            abortController = new AbortController();
+            
+            addTerminalLine(`Initiating deployment to ${postUrl}`, 'info');
+            addTerminalLine(`Parameters: ${shareCount} shares, ${delayMin}-${delayMax}s delay`, 'info');
+            
+            try {
+                for (let i = 0; i < shareCount; i++) {
+                    if (abortController.signal.aborted) {
+                        addTerminalLine('Mission aborted by user', 'warning');
+                        break;
+                    }
+                    
+                    // Simulate sharing (in a real app, you'd call your API)
+                    const delay = Math.floor(Math.random() * (delayMax - delayMin + 1)) + delayMin;
+                    
+                    addTerminalLine(`Share ${i + 1}/${shareCount}: Processing...`, 'info');
+                    
+                    await new Promise(resolve => {
+                        setTimeout(() => {
+                            // Randomly succeed or fail for demo
+                            const success = Math.random() > 0.8;
+                            
+                            if (success) {
+                                addTerminalLine(`Share ${i + 1}/${shareCount}: Successfully deployed`, 'success');
+                            } else {
+                                addTerminalLine(`Share ${i + 1}/${shareCount}: Encountered resistance`, 'warning');
+                            }
+                            
+                            resolve();
+                        }, delay * 1000);
+                    });
+                }
+                
+                addTerminalLine('Mission completed successfully', 'success');
+            } catch (error) {
+                addTerminalLine(`Error: ${error.message}`, 'error');
+            } finally {
+                isRunning = false;
+                startBtn.disabled = false;
+                stopBtn.disabled = true;
+                abortController = null;
+            }
+        });
+        
+        // Stop sharing
+        stopBtn.addEventListener('click', () => {
+            if (abortController) {
+                abortController.abort();
+                addTerminalLine('Abort signal sent...', 'warning');
+            }
+        });
+        
+        // Initial terminal message
+        setTimeout(() => {
+            addTerminalLine('Booting cyber modules...', 'info');
+        }, 500);
+        
+        setTimeout(() => {
+            addTerminalLine('Network interfaces activated', 'info');
+        }, 1500);
+    </script>
+</body>
+  </html>
